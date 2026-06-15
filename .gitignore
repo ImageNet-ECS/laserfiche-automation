@@ -1,0 +1,8 @@
+node_modules/
+auth.json
+steps/
+config.json
+scripts/raw.js
+scripts/raw2.js
+.env
+.DS_Store

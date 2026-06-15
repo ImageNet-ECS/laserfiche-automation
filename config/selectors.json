@@ -1,0 +1,50 @@
+{
+  "_comment": "All Laserfiche-specific UI strings, in one place. Roles (button/tab/textbox) stay in code; only the accessible names, CSS, and URL patterns live here so UI drift or a different tenant is a config edit, not a code change.",
+
+  "login": {
+    "startUrl": "https://accounts.laserfiche.com/WebSTS/Login",
+    "accountIdLabel": "Account ID",
+    "nextLabel": "Next",
+    "usernameLabel": "Username",
+    "passwordLabel": "Password",
+    "signInLabel": "Sign In",
+    "successUrlPattern": "app\\.laserfiche\\.com",
+    "loginDomainPattern": "accounts\\.laserfiche\\.com"
+  },
+
+  "warnings": {
+    "listCss": ".warning-resource-list li",
+    "toastCloseCss": "[test-selector=\"toast-close-btn\"]",
+    "validateLabel": "Validate",
+    "jsonEditorLinkTestId": "go-to-json-editor-link",
+    "jsonEditorTabLabel": "JSON Editor"
+  },
+
+  "picker": {
+    "insertResourcesLabel": "Insert Resources",
+    "insertLabel": "Insert",
+    "dialogCss": "mat-dialog-container",
+    "environmentSelectCss": "mat-select",
+    "rowCss": "[role=\"row\"]",
+    "rowToggleLabel": "Press Space to toggle row",
+    "virtualScrollCss": "cdk-virtual-scroll-viewport, .cdk-virtual-scroll-viewport, [cdkscrollable]",
+    "overlayBackdropCss": ".cdk-overlay-backdrop",
+    "menuItemCss": "[role=\"menuitem\"]"
+  },
+
+  "resourcesTab": {
+    "tabLabel": "Resources",
+    "removeButtonCss": "button[title=\"Remove Resource\"]",
+    "confirmLabels": ["Remove", "Yes", "Confirm", "OK", "Delete"]
+  },
+
+  "_unconfirmed_comment": "Best-guess value below; confirm on the first headed run. removeResourcesExceptType logs each row's text, so if the type label is off you'll see the real value and can adjust it here.",
+
+  "businessProcess": {
+    "typeLabel": "Business Process"
+  },
+
+  "editor": {
+    "saveButtonCss": "button[title=\"Save changes\"]"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "laserfiche-automation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Config-driven Laserfiche browser automation: interactive sign-in (no stored password), per-step snapshots, and pluggable tasks. Ships with resolve-missing-resources.",
+  "scripts": {
+    "setup": "node scripts/setup.js",
+    "login": "node scripts/login.js",
+    "start": "node scripts/run.js",
+    "job": "node scripts/run.js",
+    "run": "node scripts/run.js",
+    "run:headed": "node scripts/run.js --headed",
+    "record": "node scripts/record.js",
+    "codegen": "playwright codegen --output scripts/raw.js"
+  },
+  "dependencies": {
+    "playwright": "^1.47.0"
+  }
+}

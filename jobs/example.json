@@ -1,0 +1,16 @@
+{
+  "_comment": "An extra target you can run without touching config.json: npm run job -- jobs/example.json [--headed] [--pause]. Same shape as config.json.",
+  "mode": "existing",
+  "accountId": "485293953",
+  "username": "your-username",
+  "target": {
+    "url": "https://app.laserfiche.com/resourcemanagement/#/template/ANOTHER-TEMPLATE-ID",
+    "sourceEnvironment": "Global",
+    "environmentFallback": ["Global", "Global"]
+  },
+  "task": "build-deployment-package",
+  "params": {
+    "maxIterations": 150,
+    "nameOverrides": {}
+  }
+}

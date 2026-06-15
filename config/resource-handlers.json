@@ -1,0 +1,15 @@
+{
+  "_comment": "Per-type insert config. menuPath is the sequence of menuitems to click under 'Insert Resources' before the picker dialog appears. kind selects the insert flow (currently only env-search-table). Add entries here as menu paths are recorded/verified for each type; the run reports any types it skipped because there's no handler. An optional 'environment' pins a type to a specific source environment (e.g. Global).",
+  "Rule/LookupTableQuery":                           { "kind": "env-search-table", "menuPath": ["Rules", "Lookup Table Query Rules"] },
+  "Rule/WebRequest":                                 { "kind": "env-search-table", "menuPath": ["Rules", "Web Request Rules"] },
+  "ProcessAutomation/Workflow":                      { "kind": "env-search-table", "menuPath": ["Workflows"] },
+  "ProcessAutomation/Team":                          { "kind": "env-search-table", "menuPath": ["Teams"] },
+  "ProcessAutomation/FormImage":                     { "kind": "env-search-table", "menuPath": ["Form Images"] },
+  "ProcessAutomation/RepositoryConnection/Field":    { "kind": "env-search-table", "menuPath": ["Repository", "Metadata", "Fields"] },
+  "ProcessAutomation/RepositoryConnection/Template": { "kind": "env-search-table", "menuPath": ["Repository", "Metadata", "Templates"] },
+  "Setting/WorkSchedule":                            { "kind": "env-search-table", "menuPath": ["Settings", "Work Schedules"] },
+  "Setting/EmailDisplayName":                        { "kind": "env-search-table", "menuPath": ["Settings", "Email Display Names"] },
+  "Setting/Holiday":                                 { "kind": "env-search-table", "menuPath": ["Settings", "Holidays"] },
+  "DataManagement/LookupTable":                      { "kind": "env-search-table", "menuPath": ["Data Management", "Lookup Tables"],         "environment": "Global" },
+  "Integration/WebServiceConnection":                { "kind": "env-search-table", "menuPath": ["Integrations", "Web Service Connections"], "environment": "Global" }
+}
