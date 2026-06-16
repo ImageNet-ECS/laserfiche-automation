@@ -10,6 +10,7 @@
   "Setting/WorkSchedule":                            { "kind": "env-search-table", "menuPath": ["Settings", "Work Schedules"] },
   "Setting/EmailDisplayName":                        { "kind": "env-search-table", "menuPath": ["Settings", "Email Display Names"] },
   "Setting/Holiday":                                 { "kind": "env-search-table", "menuPath": ["Settings", "Holidays"] },
+  "DataManagement/File":                             { "kind": "env-search-table", "menuPath": ["Data Management", "Files"] },
   "DataManagement/LookupTable":                      { "kind": "env-search-table", "menuPath": ["Data Management", "Lookup Tables"] },
   "Integration/WebServiceConnection":                { "kind": "env-search-table", "menuPath": ["Integrations", "Web Service Connections"] }
 }
