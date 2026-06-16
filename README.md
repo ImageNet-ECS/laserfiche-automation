@@ -42,11 +42,12 @@ npm run setup
 
 1. **Account / client ID**, **username** (no password — see below)
 2. **Deployment package link** — paste the package's URL
-3. **new or existing?**
-4. **Sign in** — a browser opens; you enter your password and complete any MFA/SSO. When you reach
+3. **Project name** — the project the resources live in; leave blank to use **Global** only
+4. **new or existing?**
+5. **Sign in** — a browser opens; you enter your password and complete any MFA/SSO. When you reach
    the app, your session is saved to `auth.json`. (Skipped if you already have a saved session.)
-5. A **reminder** for the mode you chose, then **"Press Enter to proceed"**
-6. It runs the flow in a visible browser, **saves**, and **pauses so you can review** before closing.
+6. A **reminder** for the mode you chose, then **"Press Enter to proceed"**
+7. It runs the flow in a visible browser, **saves**, and **pauses so you can review** before closing.
 
 > **Before you proceed:**
 > - **new:** make sure you've inserted the one business process you want resources added for — and nothing else.
@@ -86,7 +87,7 @@ the browser running until Ctrl+C).
   "target": {
     "url": "https://app.laserfiche.com/resourcemanagement/#/template/<TEMPLATE_ID>",
     "sourceEnvironment": "Global",
-    "environmentFallback": ["Global", "Global"]
+    "environmentFallback": ["Global"]
   },
   "task": "build-deployment-package",
   "params": { "maxIterations": 150, "nameOverrides": {} }
@@ -95,8 +96,11 @@ the browser running until Ctrl+C).
 
 - **`mode`** — `new` or `existing` (see top of this README).
 - **`target.url`** — the deployment package link. Change it (or re-run setup) to target another package.
-- **`target.sourceEnvironment` / `environmentFallback`** — where the picker searches for resources,
-  and the order to try. `setup` doesn't prompt for these; it writes sensible defaults you can edit here.
+- **`target.sourceEnvironment`** — the **project** the resources live in (what `setup` asks for as
+  "Project name"). Leave it blank at setup and it becomes `Global`. The picker searches this project
+  first, then falls back to Global.
+- **`target.environmentFallback`** — the search order, derived automatically: `["<project>", "Global"]`,
+  or just `["Global"]` when no project is set. Editable here if you need a different order.
 - **`params.nameOverrides`** — if a resource was renamed since the package was built, map the old
   (warning) name to the new (picker) name: `{ "Old Name": "New Name" }`.
 

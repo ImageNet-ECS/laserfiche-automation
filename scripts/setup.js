@@ -40,18 +40,20 @@ async function main() {
     process.exit(1);
   }
 
+  // The project the business process / resources live in. Blank -> Global only.
+  // The picker searches this project first, then falls back to Global.
+  const exProject = exTarget.sourceEnvironment && exTarget.sourceEnvironment !== 'Global'
+    ? exTarget.sourceEnvironment
+    : '';
+  const projectInput = await ask('Project name (leave blank to use Global only)', exProject);
+  const sourceEnvironment = projectInput || 'Global';
+  const environmentFallback = sourceEnvironment === 'Global' ? ['Global'] : [sourceEnvironment, 'Global'];
+
   let mode = (await ask('Is this a NEW or EXISTING deployment package? (new/existing)', existing.mode || 'existing')).toLowerCase();
   if (mode !== 'new' && mode !== 'existing') {
     console.log('Unrecognized answer — assuming "existing".');
     mode = 'existing';
   }
-
-  // Environment is not prompted — the picker auto-detects the dropdown at run
-  // time. Defaults are written so the add-resources phase works, editable later.
-  const sourceEnvironment = exTarget.sourceEnvironment || 'Global';
-  const environmentFallback = Array.isArray(exTarget.environmentFallback) && exTarget.environmentFallback.length
-    ? exTarget.environmentFallback
-    : [sourceEnvironment, 'Global'];
 
   const config = {
     mode,

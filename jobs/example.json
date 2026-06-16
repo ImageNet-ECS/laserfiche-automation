@@ -6,7 +6,7 @@
   "target": {
     "url": "https://app.laserfiche.com/resourcemanagement/#/template/ANOTHER-TEMPLATE-ID",
     "sourceEnvironment": "Global",
-    "environmentFallback": ["Global", "Global"]
+    "environmentFallback": ["Global"]
   },
   "task": "build-deployment-package",
   "params": {
